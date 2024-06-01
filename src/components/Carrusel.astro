@@ -1,0 +1,176 @@
+---
+import "flowbite";
+---
+
+<div
+  id="default-carousel"
+  class="relative w-full min-h-screen border-b-2 border-gray-400"
+  data-carousel="slide"
+>
+  <!-- Carousel wrapper -->
+  <div class="relative min-h-screen overflow-hidden rounded-lg">
+    <!-- Item 1 -->
+    <div
+      class="hidden min-h-screen duration-700 ease-in-out"
+      data-carousel-item
+    >
+      <img
+        src="/Logos/gabriela7.jpg"
+        alt="Gabriela Oropeza"
+        class="block object-cover w-full min-h-screen z-10"
+      />
+    </div>
+    <!-- Item 2 -->
+    <div
+      class="hidden min-h-screen duration-700 ease-in-out"
+      data-carousel-item
+    >
+      <img
+        src="/Logos/gabriela13.jpg"
+        alt="Gabriela Oropeza"
+        class="block object-cover w-full min-h-screen z-10"
+      />
+    </div>
+    <!-- Item 3 -->
+    <div
+      class="hidden min-h-screen duration-700 ease-in-out"
+      data-carousel-item
+    >
+      <img
+        src="/Logos/gabriela9.jpg"
+        alt="Gabriela Oropeza"
+        class="block object-cover w-full min-h-screen z-10"
+      />
+    </div>
+  </div>
+  <div class="absolute inset-1/2 w-40 -translate-x-1/2 -translate-y-1/2 z-20">
+    <a
+      href="https://w.app/8OyZqd"
+      class="ov-btn-grow-spin flex w-full text-white mt-2 bg-orange-200 shadow-lg shadow-fuchsia-300 animate-bounce text-center text-xl font-black rounded-full items-center justify-center whitespace-nowrap"
+      target="_blank">&gt;Starts Now&lt;</a
+    >
+  </div>
+  <!-- Slider indicators -->
+
+  <div
+    class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+  >
+    <button
+      type="button"
+      class="w-3 h-3 rounded-full"
+      aria-current="true"
+      aria-label="Slide 1"
+      data-carousel-slide-to="0"></button>
+    <button
+      type="button"
+      class="w-3 h-3 rounded-full"
+      aria-current="false"
+      aria-label="Slide 2"
+      data-carousel-slide-to="1"></button>
+    <button
+      type="button"
+      class="w-3 h-3 rounded-full"
+      aria-current="false"
+      aria-label="Slide 3"
+      data-carousel-slide-to="2"></button>
+  </div>
+  <!-- Slider controls -->
+  <button
+    type="button"
+    class="absolute top-0 left-0 z-30 flex mt-5 items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+    data-carousel-prev
+  >
+    <span
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+    >
+      <svg
+        class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+        aria-hidden="true"
+        fill="none"
+        viewBox="0 0 6 10"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M5 1 1 5l4 4"></path>
+      </svg>
+      <span class="sr-only">Previous</span>
+    </span>
+  </button>
+  <button
+    type="button"
+    class="absolute top-0 right-0 mt-5 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+    data-carousel-next
+  >
+    <span
+      class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+    >
+      <svg
+        class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+        aria-hidden="true"
+        fill="none"
+        viewBox="0 0 6 10"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m1 9 4-4-4-4"></path>
+      </svg>
+      <span class="sr-only">Next</span>
+    </span>
+  </button>
+</div>
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.4.7/flowbite.min.js"
+></script>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
+  a {
+    font-family: "Merienda", cursive;
+  }
+  .ov-btn-grow-spin {
+    width: 280px;
+    height: 50px;
+    top: 150px;
+    right: 60px;
+    padding-top: 10px;
+    letter-spacing: 5px;
+    border: 1px solid #0000; /* tamaño y color de borde */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  @media (max-width: 767px) {
+    .ov-btn-grow-spin {
+      top: 25%; /* Ajusta esta posición para pantallas pequeñas */
+      right: 60px;
+    }
+  }
+
+  .ov-btn-grow-spin::after {
+    content: "";
+    background: rgb(253 186 116); /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    border: 1px solid #0000;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0) rotate(-180deg);
+    transition: all 0.3s ease;
+  }
+  .ov-btn-grow-spin:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1) rotate(0deg);
+  }
+</style>

@@ -1,0 +1,74 @@
+---
+import "@fontsource-variable/montserrat";
+const BENEFITS = [
+  {
+    image: "Cards/grupo1.jpg",
+    title: "Strength and Flexibility",
+    body: "The practice of Pilates helps strengthen the core of the body, increase flexibility, and improve posture. Its techniques have a beneficial impact on the musculoskeletal system, promoting muscular balance and greater stability.",
+  },
+  {
+    image: "Cards/grupo2.jpg",
+    title: "Stress Management",
+    body: "Yoga is an essential tool for managing the stress that arises from daily life, work, and the fast-paced rhythms of modern society. This practice helps alleviate anxiety and emotional exhaustion. Numerous studies support its benefits.",
+  },
+  {
+    image: "Cards/grupo3.jpg",
+    title: "Simplicity and Peace",
+    body: "In yoga, the development of awareness is fundamental. The practice of yoga promotes centering, enhances mindfulness, and educates the mind to stay in the present moment. Through meditation and poses, yoga helps cultivate greater self-awareness and a deeper connection with oneself.",
+  },
+];
+---
+
+<div class="flex justify-center text-center">
+  <h3
+    class="text-3xl text-center font-semibold mb-6 flex gap-x-3 items-center text-neutral-700 tracking-widest"
+    id="Ben"
+  >
+    Benefits
+  </h3>
+</div>
+<div
+  class="grid grid-cols-1 md:grid-cols-3 bg-white bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"
+>
+  {
+    BENEFITS.map(({ image, title, body }) => (
+      <>
+        <div class="flex flex-col lg:px-6 pb-5">
+          <div class="flex-shrink-0 mx-2">
+            <img
+              src={image}
+              alt="Group Photo"
+              class="w-full h-full object-cover rounded-md"
+            />
+          </div>
+          <div class="flex flex-col justify-center mt-3">
+            <h2 class="pb-3 text-center text-xl text-fuchsia-500">{title}</h2>
+            <p class="lg:text-left text-balance text-justify lg:mx-3 mx-5 ">
+              {body}
+            </p>
+          </div>
+        </div>
+      </>
+    ))
+  }
+</div>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
+  #Ben {
+    font-family: "Merienda", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 0 #906812;
+  }
+
+  h2 {
+    font-family: "Montserrat Variable", system-ui, sans-serif;
+    font-weight: 600;
+  }
+  p {
+    color: black;
+    font-family: "Montserrat Variable", system-ui, sans-serif;
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Carrusel from "../components/Carrusel.astro";
+import Card from "../components/Card.astro";
+import Slider from "../components/Slider.astro";
+---
+
+<Layout
+  title="Gabriela - Yoga & Pilatess Teacher. Yoguilates"
+  description="Physical Therapist - Pilates & Yoga Teacher"
+>
+  <main class="px-0">
+    <SectionContainer>
+      <Carrusel />
+    </SectionContainer>
+    <SectionContainer id="benefits">
+      <Card />
+    </SectionContainer>
+
+    <SectionContainer id="reviews">
+      <Slider />
+    </SectionContainer>
+  </main>
+</Layout>

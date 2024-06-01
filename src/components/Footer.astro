@@ -1,0 +1,159 @@
+---
+import Whatsapp from "./Icons/Whatsapp.astro";
+import Instagram from "./Icons/Instagram.astro";
+import Mail from "./Icons/Mail.astro";
+import SocialPill from "./SocialPill.astro";
+---
+
+<footer
+  class="shadow my-0 bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)] backdrop-blur-lg w-full mx-auto"
+  id="aboutme"
+>
+  <div
+    class="w-full border-t-2 border-gray-200 p-4 md:flex md:items-center md:justify-between"
+  >
+    <div class="flex flex-col mb-5 gap-y-8">
+      <div class="sm:block lg:hidden lg:text-center text-center mt-5">
+        <h3 class="text-2xl w-full text-neutral-700 tracking-widest">
+          About me
+        </h3>
+      </div>
+
+      <article
+        class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0"
+      >
+        <div class="w-full md:w-2/5">
+          <div class="relative flex flex-col items-end -mx-4 -mt-4 lg:mt-4">
+            <img
+              alt="Gabriela Oropeza"
+              class="md:mb-0 lg:h-3/4 lg:w-11/12"
+              src="/Logos/ultima.jpg"
+              style="object-position: 50% 50%"
+            />
+          </div>
+        </div>
+        <div class="mt-2 lg:-pr-30 text-black md:w-3/5">
+          <h3
+            class="text-2xl hidden pt-5 lg:block font-bold w-full text-neutral-700 tracking-widest lg:pb-5"
+          >
+            About me
+          </h3>
+          <p
+            class="lg:text-pretty lg:text-left text-center lg:mt-2 leading-8 lg:leading-10 md:w-3/4"
+          >
+            Hello! I'm Gaby, physiotherapist and<span class="font-bold italic"
+              >Yoga y Pilatess Teacher.
+            </span> Throughout my career, I developed a unique methodology to guide
+            my students safely and effectively, helping them discover the benefits
+            of these disciplines and connect deeply with their body and mind. We
+            invite you to join and experience the transformative power of conscious
+            movement, in addition to:
+            <span class="italic">
+              ● A holistic approach that integrates movement, breathing and
+              awareness.</span
+            >
+            <span class="italic"> ● A variety of styles and levels.</span>
+            <span class="italic">● Custom instruction.</span>
+          </p>
+          <div class="flex justify-center lg:-mt-12 lg:justify-start lg:pt-10">
+            <ul class="flex flex-wrap lg:mx-20 mt-3">
+              <li>
+                <SocialPill href="mailto:gabrielaoropezaft@gmail.com">
+                  <Mail
+                    class="size-8 my-1 lg:my-0 md:size-11 mx-3 lg:mx-5 hover:text-orange-500"
+                  />
+                </SocialPill>
+              </li>
+              <li>
+                <SocialPill
+                  href="https://www.instagram.com/gabrielaoropezaft?igsh=MXc3Y2pna2x3azVzNQ=="
+                >
+                  <Instagram
+                    class="w-6 h-10 md:w-9 md:h-12 mx-3 lg:mx-5 hover:text-rose-500"
+                  />
+                </SocialPill>
+              </li>
+              <li>
+                <SocialPill href="https://w.app/8OyZqd">
+                  <Whatsapp
+                    class="w-6 h-10 md:w-9 md:h-12 mx-3 lg:mx-5 hover:text-green-500"
+                  />
+                </SocialPill>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <section class="flex justify-center pt-2 lg:pt-0 rounded-full">
+        <a
+          href="https://w.app/8OyZqd"
+          class="ov-btn-grow-spin flex lg:w-1/4 w-full text-center font-medium rounded-full"
+          target="_blank">Schedule Your Class</a
+        >
+      </section>
+    </div>
+  </div>
+  <div
+    class="pb-2 flex flex-col sm:flex-row items-center justify-center text-center sm:space-x-2"
+  >
+    <span class="text-sm text-black/80">
+      © 2024 Made By
+      <a
+        href="https://damianflores.vercel.app/"
+        target="_blank"
+        class="hover:underline"
+      >
+        Dax-Media-Enterprise
+      </a>
+    </span>
+    <span class="text-sm text-black/80 sm:ml-2"> All Rights Reserved. </span>
+  </div>
+</footer>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
+  h3 {
+    font-family: "Merienda", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.8em;
+    font-weight: 700;
+  }
+
+  p {
+    font-family: "Montserrat Variable", system-ui, sans-serif;
+  }
+
+  .ov-btn-grow-spin {
+    background: rgb(254 215 170); /* color de fondo */
+    color: #000; /* color de fuente */
+    border: 1px solid #000; /* tamaño y color de borde */
+    padding: 16px 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+  }
+  .ov-btn-grow-spin:hover {
+    color: #000; /* color de fuente hover */
+  }
+  .ov-btn-grow-spin::after {
+    content: "";
+    background: rgb(253 186 116); /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0) rotate(-180deg);
+    transition: all 0.3s ease;
+  }
+  .ov-btn-grow-spin:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1) rotate(0deg);
+  }
+</style>

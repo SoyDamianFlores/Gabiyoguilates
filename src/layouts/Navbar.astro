@@ -1,0 +1,154 @@
+---
+
+---
+
+<nav
+  class="fixed w-full md:items-center border border-b-2 border-fuchsia-700 rounded border-solid md:justify-start z-40 top-0 start-0 md:flex md:flex-row bg-white bg-[radial-gradient(60%_120%_at_50%_50%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)] lg:-my-8"
+>
+  <div
+    class="max-w-screen-xl md:w-1/4 flex flex-wrap items-center md:items-start justify-between mx-auto pr-4 lg:my-5 md:justify-start"
+  >
+    <a
+      href="#top"
+      class="flex items-center md:flex-row space-x-3 md:flex md:items-end"
+    >
+      <img
+        class="w-16 h-20 lg:w-20 lg:h-max ml-3"
+        src="Logos/loo.png"
+        alt="Loto Photo"
+      />
+      <div class="flex flex-col items-center md:items-start">
+        <h1 class="lg:mt-6 whitespace-nowrap text-neutral-700" id="gaby">
+          Yoga & Pilatess
+        </h1>
+        <span
+          class="text-sm lg:pt-0 lg:ml-3 whitespace-normal text-fuchsia-500"
+          id="yoga">Lic. Gabriela Oropeza</span
+        >
+      </div>
+    </a>
+
+    <a
+      id="menu-button"
+      data-collapse-toggle="navbar-sticky"
+      data-nav-toggle="#navbar-sticky"
+      href="#"
+      class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-fuchsia-500 rounded-lg md:hidden hover:bg-fuchsia-200 bg-fuchsia-200"
+      aria-controls="navbar-sticky"
+      aria-expanded="false"
+    >
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" fill="none" viewBox="0 0 17 14">
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15"></path>
+      </svg>
+    </a>
+  </div>
+
+  <div
+    id="menu-open"
+    class="items-center justify-between hidden w-full md:flex md:w-auto navbar md:flex-grow md:justify-evenly"
+    id="navbar-sticky"
+  >
+    <ul
+      class="flex flex-col md:flex-row md:pl-20 md:ml-20 p-4 md:p-0 mt-4 font-medium rounded-lg md:space-x-20 rtl:space-x-reverse"
+    >
+      <li>
+        <a
+          href="#top"
+          class="btn block py-2 px-3 text-neutral-700 rounded md:p-0 hover:scale-110 hover:text-fuchsia-500"
+          data-nav-toggle="navbar-sticky"
+          aria-current="page">Classes</a
+        >
+      </li>
+      <li>
+        <a
+          href="#benefits"
+          class="btn block py-2 px-3 text-neutral-700 rounded md:p-0 hover:scale-110 hover:text-fuchsia-500"
+          data-nav-toggle="navbar-sticky">Benefits</a
+        >
+      </li>
+      <li>
+        <a
+          href="#reviews"
+          class="btn block py-2 px-3 text-neutral-700 rounded md:p-0 hover:scale-110 hover:text-fuchsia-500"
+          data-nav-toggle="navbar-sticky">Reviews</a
+        >
+      </li>
+      <li>
+        <a
+          href="#aboutme"
+          class="btn block py-2 px-3 text-neutral-700 rounded md:p-0 hover:scale-110 hover:text-fuchsia-500"
+          data-nav-toggle="navbar-sticky">About me</a
+        >
+      </li>
+      <li>
+        <a
+          href="mailto:gabrielaoropezaft@gmail.com"
+          class="btn block py-2 px-3 text-neutral-700 rounded md:p-0 hover:scale-110 hover:text-fuchsia-500"
+          data-nav-toggle="navbar-sticky">Contact me</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const button = document.querySelector("#menu-button") as Element;
+  const menuOpen = document.querySelector("#menu-open") as Element;
+
+  button?.addEventListener("click", () => {
+    menuOpen.classList.toggle("hidden");
+  });
+  document
+    .querySelectorAll('a[data-nav-toggle="navbar-sticky"]')
+    .forEach((link) => {
+      link.addEventListener("click", () => {
+        menuOpen.classList.add("hidden");
+      });
+    });
+</script>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
+
+  @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Great+Vibes&display=swap");
+
+  #gaby {
+    font-family: "Merienda", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1.8em;
+    text-shadow: 1px 1px 0 #906812;
+  }
+  @media (min-width: 1024px) {
+    #gaby {
+      letter-spacing: 5px;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+  }
+
+  #yoga {
+    font-family: "Cabin", sans-serif;
+    letter-spacing: 0.1em;
+    font-weight: 600;
+    font-style: italic;
+  }
+</style>
+
+<script>
+  document
+    .getElementById("menu-button")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      const navToggle = document.querySelector(
+        this.getAttribute("data-nav-toggle")
+      );
+      navToggle.classList.toggle("hidden");
+    });
+</script>

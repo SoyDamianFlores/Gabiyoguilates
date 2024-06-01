@@ -1,0 +1,223 @@
+---
+import Star from "./Icons/Star.astro";
+import StarHalf from "./Icons/StarHalf.astro";
+const COMENTS = [
+  {
+    image: "Peopple/ruvi.jpg",
+    name: "Elena Flores",
+    typeclass: "Yoga",
+    calification: 5,
+    note: "Cada clase con Gaby es una experiencia renovadora. Su enfoque holístico y su habilidad para crear un ambiente tranquilo y acogedor hacen que sea un placer asistir a sus sesiones. ¡Excelente profesora!",
+  },
+  {
+    image: "Peopple/chon.jpg",
+    name: "Damian Flores",
+    typeclass: "Yoga",
+    calification: 5,
+    note: "Las clases de yoga con Lili han transformado mi vida de maneras que nunca imaginé. Su energía positiva y su dedicación a cada alumno hacen que cada sesión sea especial. ¡Muy recomendadas!",
+  },
+  {
+    image: "Peopple/prima.jpg",
+    name: "Alexandra Puentes",
+    typeclass: "Pilatess",
+    calification: 4.5,
+    note: "La mejor instructora de pilates que he tenido. Su conocimiento profundo y su habilidad para motivar me han ayudado a alcanzar niveles de fuerza y flexibilidad que creía imposibles. Su energía es increíble.",
+  },
+  {
+    image: "Peopple/armando.jpg",
+    name: "Armando Guerrero",
+    typeclass: "Pilatess",
+    calification: 5,
+    note: "Cada sesión con Lily es una mezcla perfecta de desafío y relajación. Su habilidad para guiar y motivar es impresionante, y siempre salgo de sus clases sintiéndome equilibrado y revitalizado. ¡Me encanta!",
+  },
+  {
+    image: "Peopple/adri.jpg",
+    name: "Adriana Pereira",
+    typeclass: "Pilatess",
+    calification: 5,
+    note: "He mejorado mi postura y reducido el estrés significativamente desde que comencé sus clases. Gabriela tiene un talento especial para adaptar las prácticas a las necesidades individuales de cada alumno.",
+  },
+  {
+    image: "Peopple/aroldo.jpg",
+    name: "Aroldo Garcés",
+    typeclass: "Yoga",
+    calification: 4.5,
+    note: "Me siento más fuerte y flexible gracias a las sesiones de yoga con Gaby. Su enfoque personalizado y su paciencia hacen que cada clase sea una experiencia enriquecedora y relajante.",
+  },
+  {
+    image: "Peopple/ruvicon.jpg",
+    name: "Ruvi De Leon",
+    typeclass: "Yoga",
+    calification: 5,
+    note: "¡Gracias a las enseñanzas de Gabriela, he descubierto el poder del yoga! Su pasión por la práctica es contagiosa y me ha inspirado a profundizar en mi propio viaje de bienestar.",
+  },
+  {
+    image: "Peopple/victor.jpg",
+    name: "Victor Chavez Maduro",
+    typeclass: "Yoga",
+    calification: 5,
+    note: "Recomiendo a Gaby a cualquiera que busque una práctica de yoga profunda y efectiva. Su atención al detalle y su capacidad para conectar con cada alumno hacen que sus clases sean excepcionales.",
+  },
+  {
+    image: "Peopple/ruth.jpg",
+    name: "Ruth de Leon",
+    typeclass: "Pilatess",
+    calification: 5,
+    note: "Recibir fisioterapia con Gabriela ha sido increíble. Su conocimiento y dedicación me ayudaron a recuperarme rápidamente y a prevenir futuras lesiones. ¡Muy recomendada!",
+  },
+];
+const COMENTS2 = [
+  // Agrega más reseñas aquí
+];
+const COMENTS3 = [
+  // Agrega más reseñas aquí
+];
+---
+
+<section
+  class="bg-white max-w-full w-full relative px-4 lg:pt-14 lg:pb-0 pb-10"
+>
+  <div class="flex justify-center text-center">
+    <h3
+      class="text-3xl text-center font-semibold flex gap-x-3 items-center text-neutral-700 tracking-widest"
+      id="Prub"
+    >
+      Reviews
+    </h3>
+  </div>
+
+  <!-- Slider main container -->
+  <div class="swiper my-1">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {
+        COMENTS.map(({ name, image, typeclass, calification, note }) => (
+          <div class="swiper-slide">
+            <div class="mx-2 h-full my-5">
+              <div class="px-4 border-l-8 border-fuchsia-200 rounded-lg bg-slate-100 h-full">
+                <div class="flex flex-row">
+                  <div class="flex-shrink-0 w-24 h-24 mr-4">
+                    <img
+                      src={image}
+                      alt={`${name}'s photo`}
+                      class="w-full h-full mt-4 object-cover rounded-full"
+                    />
+                  </div>
+                  <div class="flex flex-col justify-center">
+                    <div class="flex items-center mb-2">
+                      <h1 class="text-lg font-bold mr-2 text-black">{name}</h1>
+                      {/* Añade un ícono o cualquier otro elemento decorativo aquí si es necesario */}
+                    </div>
+                    <h3 class="text-sm text-gray-500 mb-2">{typeclass}</h3>
+                    <div class="flex">
+                      {Array.from({ length: 5 }, (_, index) => {
+                        if (index + 0.5 === calification) {
+                          return <StarHalf key={index} />;
+                        }
+                        return index < calification ? (
+                          <Star key={index} />
+                        ) : (
+                          <Star class="text-gray-300" key={index} /> // Estrella vacía para calificación no completa
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4">
+                  <p class="text-gray-700">{note}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+      <!-- Mas Slides acá -->
+    </div>
+    <!-- If we need pagination -->
+    <div class="swiper-pagination"></div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- If we need scrollbar -->
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+<script>
+  import Swiper from "swiper";
+  import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+  const swiper = new Swiper(".swiper", {
+    modules: [Navigation, Pagination, Autoplay],
+    autoplay: {
+      delay: 10000,
+    },
+    slidesPerView: 1, // Display 3 slides per view
+    slidesPerGroup: 1, // Group slides into sets of 3
+    breakpoints: {
+      640: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+    },
+
+    // Optional parameters
+    direction: "horizontal",
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
+</script>
+
+<style>
+  .swiper {
+    width: 100%;
+    height: 300px;
+  }
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  .h-full {
+    height: 90%;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: rgb(245 208 254);
+  }
+  .swiper-pagination {
+    --swiper-pagination-color: rgb(232 121 249);
+  }
+
+  #Prub {
+    font-family: "Merienda", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.8em;
+  }
+</style>

@@ -1,0 +1,21 @@
+{
+  "name": "gabiyogilates",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource-variable/montserrat": "^5.0.19",
+    "astro": "^4.8.5",
+    "flowbite": "^2.3.0",
+    "swiper": "^11.1.4",
+    "tailwindcss": "^3.4.3"
+  }
+}
